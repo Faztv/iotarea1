@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Punto de Acceso (AP)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .network {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .ap {
+            width: 120px;
+            height: 50px;
+            background-color: lightgreen;
+            text-align: center;
+            line-height: 50px;
+            border: 2px solid black;
+            margin: 20px;
+            position: relative;
+        }
+        .device {
+            width: 80px;
+            height: 30px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid black;
+            margin: 5px;
+            position: absolute;
+        }
+        .device1 { top: -70px; left: -130px; }
+        .device2 { top: -70px; left: 30px; }
+        .device3 { top: 70px; left: -130px; }
+        .device4 { top: 70px; left: 30px; }
+        .device5 { top: 0; left: 150px; }
+        .line {
+            position: absolute;
+            width: 2px;
+            height: 60px;
+            background-color: black;
+        }
+        .line1 { top: -20px; left: -70px; transform: rotate(60deg); }
+        .line2 { top: -20px; left: 70px; transform: rotate(-60deg); }
+        .line3 { top: 30px; left: -70px; transform: rotate(-60deg); }
+        .line4 { top: 30px; left: 70px; transform: rotate(60deg); }
+        .line5 { top: 25px; left: 60px; width: 70px; height: 2px; background-color: black; }
+    </style>
+</head>
+<body>
+    <div class="network">
+        <div class="ap">
+            AP
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+            <div class="line line4"></div>
+            <div class="line line5"></div>
+            <div class="device device1">Device 1</div>
+            <div class="device device2">Device 2</div>
+            <div class="device device3">Device 3</div>
+            <div class="device device4">Device 4</div>
+            <div class="device device5">Device 5</div>
+        </div>
+    </div>
+
+    <script>
+        // Definir una función para generar un número aleatorio entre 0 y 1
+        function generarNumeroAleatorio() {
+            return Math.random();
+        }
+
+        // Definir una función para calcular x según la fórmula x = -ln(1 - numeroaleatorio) / alfa
+        function calcularX(alfa) {
+            var numeroAleatorio = generarNumeroAleatorio();
+            return -Math.log(1 - numeroAleatorio) / alfa;
+        }
+
+        // Definir alfa
+        var alfa = 0.5; // Este valor puede ser ajustado según tus necesidades
+
+        // Calcular x y mostrar en consola para verificar
+        var x = calcularX(alfa);
+        console.log("El valor de x es: " + x);
+    </script>
+</body>
+</html>

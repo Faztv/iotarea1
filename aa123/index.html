@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Eventos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Tiempo</th>
+                <th>Evento</th>
+                <th>Número de Clientes</th>
+                <th>Siguiendo Cliente</th>
+                <th>Siguiendo Bus</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // Aquí puedes agregar tu lógica para obtener los datos de la tabla
+            // Supongamos que tienes un array llamado $eventos con los datos
+            foreach ($eventos as $evento) {
+                echo "<tr>";
+                echo "<td>" . $evento['tiempo'] . "</td>";
+                echo "<td>" . $evento['evento'] . "</td>";
+                echo "<td>" . $evento['numero_de_clientes'] . "</td>";
+                echo "<td>" . $evento['siguiendo_cliente'] . "</td>";
+                echo "<td>" . $evento['siguiendo_bus'] . "</td>";
+                echo "</tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+</body>
+</html>
